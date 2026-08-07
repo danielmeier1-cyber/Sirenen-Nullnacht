@@ -1,0 +1,20 @@
+{
+  "asset": "Amerikanisches Vorstadthaus",
+  "version": "3.0-final-preimplementation",
+  "engine": "Godot 4",
+  "format": "glTF Binary 2.0",
+  "coordinate_system": "Y-up",
+  "unit": "meter",
+  "footprint_m": [12, 9],
+  "storeys": 2,
+  "rooms_ground_floor": ["Küche", "Esszimmer", "Wohnzimmer", "Abstellraum", "Flur/Treppe"],
+  "rooms_upper_floor": ["Elternschlafzimmer", "Kinderzimmer", "Bad", "Flur/Treppe"],
+  "style": ["amerikanisches Vorstadthaus", "horizontales Siding", "Frontveranda", "Sprossenfenster", "Schindeldach"],
+  "implementation_status": "bereit zur Godot-Importprüfung",
+  "collision_strategy": "Trimesh nur für statische Struktur; Möbel selektiv",
+  "files": {
+    "model": "amerikanisches_vorstadthaus_final_godot.glb",
+    "source": "generate_suburban_house.py",
+    "documentation": "README_amerikanisches_vorstadthaus.md"
+  }
+}

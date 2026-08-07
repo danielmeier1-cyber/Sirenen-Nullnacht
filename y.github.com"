@@ -1,0 +1,46 @@
+# SIRENEN: Nullnacht
+
+Spielbarer Vertical Slice eines düsteren First-Person-Zombie-Horrors für Android.
+
+## Inhalt
+
+- Story-Kampagnenauftakt in einer Wohnung der Gegenwart
+- Hauptfigur Jonas, Partnerin Mara und Tochter Lena
+- Sirenen, Radio-Warnung und schrittweise Eskalation
+- Touch-Steuerung: linker runder Joystick zum Bewegen, rechter runder Joystick
+  zum Drehen, Patronensymbol zum Feuern sowie offene Hand für Aktionen; die
+  Hand wird während der Berührung als Faust dargestellt
+- Desktop-Teststeuerung: WASD, Maus, linke Maustaste, E
+- Drei Missionsphasen und ein erster Gegner-Ansturm
+- Vollständig begehbares, zweigeschossiges amerikanisches Vorstadthaus als eingebettetes GLB/PBR-Umgebungsasset
+- Erdgeschoss mit Küche, Esszimmer, Wohnzimmer, Abstellraum und Treppe; Obergeschoss mit Elternzimmer, Kinderzimmer und Bad
+
+## Starten
+
+1. Projektordner in Godot 4.3 oder neuer importieren.
+2. `main.tscn` starten.
+3. Für Android in Godot JDK und Android SDK konfigurieren. Das Android-Export-Preset ist bereits enthalten.
+
+## Android-Build
+
+Das Export-Preset ist bereits enthalten. Lokal genügt mit Godot 4.3 oder neuer:
+
+```bash
+./tools/build_android.sh
+```
+
+Die APK wird als `build/Sirenen-Nullnacht.apk` erzeugt. Zusätzlich enthält das
+Projekt einen automatischen GitHub-Actions-Build unter
+`.github/workflows/android-apk.yml`. Nach einem Push kann die APK im jeweiligen
+Workflow-Lauf als Artefakt `Sirenen-Nullnacht-APK` heruntergeladen werden.
+
+## Produktionshinweise
+
+Das Haus liegt unter `assets/environment/amerikanisches_vorstadthaus_final_godot.glb` und wird in `scripts/main.gd` instanziiert. Die statischen Architekturteile erhalten beim Szenenstart Trimesh-Kollisionen; Story-Interaktionen bleiben getrennte Spielknoten. Für Android sollten nach dem ersten Godot-Import die erzeugten Importdaten übernommen und Laufzeit sowie Speicherverbrauch auf einem Zielgerät geprüft werden. Die Gewaltdarstellung richtet sich ausschließlich gegen eindeutig fiktionale Infizierte; Altersfreigabe und Store-Richtlinien müssen vor Veröffentlichung separat geprüft werden.
+# Version 7
+
+- Neues fotorealistisches Patronensymbol für die Feuertaste
+- Verwendet wird die zweite Patrone von rechts aus der bereitgestellten Vorlage
+- Patronenspitze um 45 Grad gegen den Uhrzeigersinn gedreht
+- Feuerfunktion weiterhin direkt mit `player.shoot()` verbunden
+- Android-Paketversion auf `0.7.0` aktualisiert
