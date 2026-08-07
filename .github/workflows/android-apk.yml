@@ -61,7 +61,7 @@ jobs:
               -validity 10000 \
               -dname "CN=Android Debug,O=Android,C=US"
           fi
-          settings_file="$HOME/.config/godot/editor_settings-4.tres"
+          settings_file="$HOME/.config/godot/editor_settings-4.3.tres"
           cat > "$settings_file" <<EOF
           [gd_resource type="EditorSettings" format=3]
 
