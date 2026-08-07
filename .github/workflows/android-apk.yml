@@ -39,6 +39,11 @@ jobs:
           unzip -q /tmp/templates.tpz -d /tmp/templates
           cp -a /tmp/templates/templates/. "$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.stable/"
 
+      - name: Install required Android SDK packages
+        shell: bash
+        run: |
+          sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0"
+
       - name: Configure Android export
         shell: bash
         run: |
