@@ -74,6 +74,9 @@ jobs:
       - name: Import and export Android APK
         shell: bash
         run: |
+          export GODOT_ANDROID_KEYSTORE_DEBUG_PATH="$HOME/.android/debug.keystore"
+          export GODOT_ANDROID_KEYSTORE_DEBUG_USER="androiddebugkey"
+          export GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD="android"
           chmod +x tools/build_android.sh
           tools/build_android.sh
 
